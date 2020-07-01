@@ -116,12 +116,11 @@
             this.selected = this.options.filter(option => {
                 return this.value.includes(option.value);
             });
-        },
-        watch: {
-            selected: function () {
+
+            this.$watch('selected', () => {
                 this.$emit('change', this.effectiveValue);
-            }
-        }
+            });
+        },
     }
 </script>
 
